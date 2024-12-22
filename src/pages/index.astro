@@ -1,44 +1,49 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import ServiceCard from '../components/ServiceCard.astro';
-import TestimonialsCarousel from '../components/TestimonialsCarousel.astro';
-import TeckelColors from '../components/TeckelColors.astro'; // Importar el nuevo componente
-import { getServices } from '../utils/services';
+import Layout from "../layouts/Layout.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import TestimonialsCarousel from "../components/TestimonialsCarousel.astro";
+import TeckelColors from "../components/TeckelColors.astro"; // Importar el nuevo componente
+import Contact from "../components/Contact.astro";
+import { getServices } from "../utils/services";
 
 const services = getServices();
 
 const schema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "StarsDogs",
-  "description": "Venta de cachorros Teckel (Dachshund) de alta calidad en Medellín, Colombia. Envíos nacionales e internacionales, especialmente a Estados Unidos.",
-  "address": {
+  name: "StarsDogs",
+  description:
+    "Venta de cachorros Teckel (Dachshund) de alta calidad en Medellín, Colombia. Envíos nacionales e internacionales, especialmente a Estados Unidos.",
+  address: {
     "@type": "PostalAddress",
-    "addressLocality": "Medellín",
-    "addressCountry": "CO"
+    addressLocality: "Medellín",
+    addressCountry: "CO",
   },
-  "telephone": "+573218021869",
-  "priceRange": "$$",
-  "openingHours": "Lu-Sa 09:00-18:00",
-  "sameAs": [
-    "https://www.instagram.com/starsdogsmedellin/"
-  ]
+  telephone: "+573218021869",
+  priceRange: "$$",
+  openingHours: "Lu-Sa 09:00-18:00",
+  sameAs: ["https://www.instagram.com/starsdogsmedellin/"],
 };
 ---
 
-<Layout 
+<Layout
   title="StarsDogs | Cachorros Teckel (Dachshund) en Venta"
   description="Encuentra tu cachorro Teckel perfecto en StarsDogs. Ofrecemos cachorros Dachshund de alta calidad con envíos nacionales e internacionales desde Medellín, Colombia."
 >
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-  
+
   <main>
     <section class="hero">
       <div class="hero__container">
         <h1 class="hero__title">Tu Próximo Compañero Teckel te Espera</h1>
-        <p class="hero__subtitle">Cachorros Dachshund de la más alta calidad, criados con amor en Medellín para el mundo.</p>
+        <p class="hero__subtitle">
+          Cachorros Dachshund de la más alta calidad, criados con amor en
+          Medellín para el mundo.
+        </p>
         <div class="hero__cta">
-          <a href="https://wa.me/573218021869" class="btn btn--primary">¡Contáctanos!</a>
+          <a href="https://wa.me/573218021869" class="btn btn--primary"
+            >¡Contáctanos!</a
+          >
           <p class="hero__guarantee">🐶 Amor incondicional garantizado</p>
         </div>
       </div>
@@ -47,33 +52,38 @@ const schema = {
     <section class="services" id="servicios">
       <h2 class="services__title">Nuestros Cachorros Teckel</h2>
       <div class="services__grid">
-        {services.map(puppy => (
-          <div class="services__card">
-            <img 
-              src={puppy.image} 
-              alt={puppy.name}
-              class="services__image"
-              width="300"
-              height="200"
-              loading="lazy"
-            />
-            <div class="services__content">
-              <h3 class="services__title">
-                <a href={`/servicios/${puppy.id}`}>{puppy.name}</a>
-              </h3>
-              <p class="services__description">{puppy.description}</p>
-              <p class="services__age">Edad: {puppy.age}</p>
-              <a href="https://wa.me/573218021869" class="services__cta">
-                ¡Quiero conocerlo!
-              </a>
+        {
+          services.map((puppy) => (
+            <div class="services__card">
+              <img
+                src={puppy.image}
+                alt={puppy.name}
+                class="services__image"
+                width="300"
+                height="200"
+                loading="lazy"
+              />
+              <div class="services__content">
+                <h3 class="services__title">
+                  <a href={`/servicios/${puppy.id}`}>{puppy.name}</a>
+                </h3>
+                <p class="services__description">{puppy.description}</p>
+                <p class="services__age">Edad: {puppy.age}</p>
+                <a href="https://wa.me/573218021869" class="services__cta">
+                  ¡Quiero conocerlo!
+                </a>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </section>
 
-    <TeckelColors /> <!-- Agregar el nuevo componente aquí -->
+    <TeckelColors />
+    <!-- Agregar el nuevo componente aquí -->
 
     <TestimonialsCarousel />
+
+    <Contact />
   </main>
 </Layout>
