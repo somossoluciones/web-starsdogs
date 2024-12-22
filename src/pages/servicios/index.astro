@@ -3,27 +3,27 @@ import Layout from '../../layouts/Layout.astro';
 import ServiceCard from '../../components/ServiceCard.astro';
 import { getServices } from '../../utils/services';
 
-const services = getServices();
+const puppies = getServices();
 ---
 
-<Layout 
-  title="Servicios Espirituales | Amarres de Amor y Retorno de Pareja"
-  description="Especialistas en amarres de amor, retorno de pareja, endulzamientos y limpiezas espirituales. Resultados garantizados en 7 días. Primera consulta gratis."
+<Layout
+  title="Cachorros Teckel en Venta | Adopta un Dachshund"
+  description="Descubre nuestros adorables cachorros Teckel (Dachshund) disponibles para la venta. Encuentra tu nuevo compañero peludo en StarsDogs."
 >
   <main class="services-page">
     <div class="services-page__header">
-      <h1>Nuestros Servicios Espirituales</h1>
-      <p>Soluciones efectivas para el amor y la prosperidad</p>
+      <h1>Nuestros Cachorros Teckel</h1>
+      <p>Conoce a nuestros adorables compañeros</p>
     </div>
-    
+
     <div class="services-page__grid">
-      {services.map(service => (
-        <ServiceCard 
-          title={service.title}
-          description={service.description}
-          image={service.image}
-          url={`/servicios/${service.id}`}
-          duration={service.duration}
+      {puppies.map(puppy => (
+        <ServiceCard
+          title={puppy.name}
+          description={puppy.description}
+          image={puppy.image}
+          url={`/servicios/${puppy.id}`}
+          duration={`Edad: ${puppy.age}`}
         />
       ))}
     </div>

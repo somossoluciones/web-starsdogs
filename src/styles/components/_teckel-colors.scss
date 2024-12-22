@@ -1,0 +1,85 @@
+.teckel-colors {
+  display: flex;
+  background-color: var(--color-primary);
+  background-image: url('/images/huellitas.png');
+  background-size: cover;
+  background-position: center;
+  color: var(--color-white);
+  padding: clamp(1rem, 5vw, var(--spacing-lg));
+  gap: var(--spacing-md);
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: clamp(1rem, 3vw, var(--spacing-md));
+  }
+
+  &__section {
+    flex: 1;
+    padding: clamp(0.5rem, 3vw, var(--spacing-md));
+    min-width: 0; // Evita desbordamiento en flex
+    
+    @media (max-width: 768px) {
+      padding: 0.5rem;
+    }
+  }
+
+  &__title {
+    font-size: clamp(1.5rem, 4vw, var(--font-size-xl));
+    margin-bottom: clamp(1rem, 3vw, var(--spacing-md));
+    font-weight: var(--font-weight-bold);
+  }
+
+  &__description {
+    font-size: clamp(1rem, 2vw, var(--font-size-md));
+    margin-bottom: clamp(1rem, 3vw, var(--spacing-md));
+    line-height: 1.6;
+    max-width: 65ch; // Mejora la legibilidad
+  }
+
+  &__carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: clamp(0.5rem, 2vw, var(--spacing-sm));
+    padding-bottom: var(--spacing-sm);
+    -webkit-overflow-scrolling: touch; // Mejora el scroll en iOS
+    scroll-snap-type: x mandatory; // Mejora el scroll en móvil
+    
+    &::-webkit-scrollbar {
+      height: 6px;
+      
+      @media (max-width: 768px) {
+        height: 4px;
+      }
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: var(--color-gray-light);
+      border-radius: 4px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: var(--color-primary);
+      border-radius: 4px;
+    }
+  }
+
+  &__image {
+    width: clamp(120px, 25vw, 150px);
+    height: clamp(120px, 25vw, 150px);
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    transition: transform 0.3s ease;
+    scroll-snap-align: start; // Mejora el scroll en móvil
+    
+    @media (hover: hover) {
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+    
+    @media (max-width: 480px) {
+      width: clamp(100px, 20vw, 120px);
+      height: clamp(100px, 20vw, 120px);
+    }
+  }
+}

@@ -1,0 +1,355 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TestimonialsCarousel from '../components/TestimonialsCarousel.astro';
+
+const testimonials = [
+  {
+    name: "María González",
+    role: "Dueña de Apolo",
+    text: "¡Apolo ha sido la mejor decisión que hemos tomado! Es un cachorro lleno de energía y amor. La atención que recibimos fue excelente y el proceso de adopción fue muy profesional.",
+    image: "/images/testimonials/cliente-3-apolo.jpeg"
+  },
+  {
+    name: "Juan Pérez",
+    role: "Papá de Chicho",
+    text: "Chicho se ha convertido en el miembro más querido de nuestra familia. Su personalidad juguetona y cariñosa nos alegra cada día. ¡Gracias StarsDogs!",
+    image: "/images/testimonials/cliente-4-chicho.jpeg"
+  },
+  {
+    name: "Ana Martínez",
+    role: "Mamá de Juanita",
+    text: "Juanita es una bendición. Es una Teckel preciosa y muy inteligente. El seguimiento post-adopción demuestra el gran compromiso de StarsDogs.",
+    image: "/images/testimonials/cliente-5-juanita.jpeg"
+  },
+  {
+    name: "Carlos Rodríguez",
+    role: "Dueño de Milo",
+    text: "Milo ha traído tanta felicidad a nuestro hogar. Es un perrito muy saludable y con un temperamento excepcional. ¡Totalmente recomendados!",
+    image: "/images/testimonials/cliente-6-milo.jpeg"
+  },
+  {
+    name: "Laura Sánchez",
+    role: "Cliente Satisfecha",
+    text: "La experiencia con StarsDogs fue increíble desde el primer momento. Nuestro Teckel es hermoso y tiene un excelente pedigrí. El servicio y asesoramiento fueron impecables.",
+    image: "/images/testimonials/client-1.jpeg"
+  }
+];
+---
+
+<Layout 
+  title="Clientes Felices" 
+  description="Conoce las experiencias de familias que han adoptado cachorros Teckel en StarsDogs. Historias reales de amor y felicidad con nuestros cachorros."
+>
+  <main class="happy-clients">
+    <section class="happy-clients__hero">
+      <div class="happy-clients__container">
+        <h1>Clientes Felices</h1>
+        <p>
+          En StarsDogs, nuestra mayor satisfacción es ver a nuestros cachorros Teckel 
+          crecer en hogares llenos de amor. Cada historia es única y especial, 
+          reflejando la alegría que nuestros pequeños amigos traen a sus nuevas familias.
+        </p>
+      </div>
+    </section>
+
+    <section class="testimonials-extended">
+      <div class="testimonials-extended__container">
+        <h2>Experiencias StarsDogs</h2>
+        <p class="testimonials-extended__intro">
+          Descubre lo que dicen las familias que han confiado en nosotros para 
+          encontrar a su compañero peludo ideal. Cada testimonio refleja nuestro 
+          compromiso con la calidad y el bienestar de nuestros cachorros.
+        </p>
+        
+        <div class="testimonials-grid">
+          {testimonials.map(testimonial => (
+            <div class="testimonial-card">
+              <div class="testimonial-card__avatar">
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  width="80"
+                  height="80"
+                  loading="lazy"
+                />
+              </div>
+              <blockquote class="testimonial-card__quote">
+                {testimonial.text}
+              </blockquote>
+              <div class="testimonial-card__author">
+                <strong>{testimonial.name}</strong>
+                <span>{testimonial.role}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <div class="gallery__container">
+        <h2>Galería de Momentos Felices</h2>
+        <p class="gallery__intro">
+          Capturamos los momentos más especiales de nuestros Teckels con sus nuevas familias. 
+          Cada imagen refleja la felicidad y el amor que nuestros cachorros traen a sus hogares.
+        </p>
+        <div class="gallery__grid">
+          <div class="gallery__item">
+            <img 
+              src="/images/testimonials/client-1.jpeg" 
+              alt="Cliente feliz con su Teckel" 
+              loading="lazy" 
+            />
+          </div>
+          <div class="gallery__item">
+            <img 
+              src="/images/testimonials/cliente-2.jpeg" 
+              alt="Familia feliz con su Teckel" 
+              loading="lazy" 
+            />
+          </div>
+          <div class="gallery__item">
+            <img 
+              src="/images/testimonials/cliente-3-apolo.jpeg" 
+              alt="Apolo el Teckel con su familia" 
+              loading="lazy" 
+            />
+          </div>
+          <div class="gallery__item">
+            <img 
+              src="/images/testimonials/cliente-4-chicho.jpeg" 
+              alt="Chicho el Teckel en su nuevo hogar" 
+              loading="lazy" 
+            />
+          </div>
+          <div class="gallery__item">
+            <img 
+              src="/images/testimonials/cliente-5-juanita.jpeg" 
+              alt="Juanita la Teckel con su familia" 
+              loading="lazy" 
+            />
+          </div>
+          <div class="gallery__item">
+            <img 
+              src="/images/testimonials/cliente-6-milo.jpeg" 
+              alt="Milo el Teckel disfrutando de su hogar" 
+              loading="lazy" 
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="join-family">
+      <div class="join-family__container">
+        <h2>Únete a la Familia StarsDogs</h2>
+        <p>
+          ¿Estás listo para dar el siguiente paso? Encuentra a tu compañero 
+          Teckel ideal y forma parte de nuestra comunidad de dueños felices.
+        </p>
+        <a href="/contacto" class="button button--primary">
+          Conoce Nuestros Cachorros
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style lang="scss">
+  @use '../styles/variables' as *;
+
+  .happy-clients {
+    &__hero {
+      background-color: rgba($primary, 0.05);
+      padding: $spacing-xl 0;
+      text-align: center;
+    }
+
+    &__container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 $spacing-md;
+
+      h1 {
+        font-size: 3rem;
+        color: $primary;
+        margin-bottom: $spacing-md;
+
+        @media (max-width: $mobile) {
+          font-size: 2.5rem;
+        }
+      }
+
+      p {
+        font-size: 1.2rem;
+        color: rgba($dark, 0.85);
+        line-height: 1.6;
+      }
+    }
+  }
+
+  .testimonials-extended {
+    padding: $spacing-xl 0;
+
+    &__container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 $spacing-md;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: $primary;
+      margin-bottom: $spacing-md;
+    }
+
+    &__intro {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto $spacing-xl;
+      font-size: 1.1rem;
+      color: rgba($dark, 0.85);
+      line-height: 1.6;
+    }
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: $spacing-lg;
+    margin-bottom: $spacing-xl;
+  }
+
+  .testimonial-card {
+    background: $light;
+    padding: $spacing-lg;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba($dark, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    &__avatar {
+      width: 80px;
+      height: 80px;
+      margin-bottom: $spacing-md;
+      border: 3px solid rgba($primary, 0.1);
+      border-radius: 50%;
+      padding: 2px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+
+    &__quote {
+      font-style: italic;
+      color: rgba($dark, 0.85);
+      margin-bottom: $spacing-md;
+      flex-grow: 1;
+      line-height: 1.6;
+    }
+
+    &__author {
+      strong {
+        display: block;
+        color: $primary;
+        font-size: 1.1rem;
+        margin-bottom: 4px;
+      }
+
+      span {
+        font-size: 0.9rem;
+        color: rgba($dark, 0.75);
+      }
+    }
+  }
+
+  .join-family {
+    background-color: rgba($primary, 0.05);
+    padding: $spacing-xl 0;
+    text-align: center;
+
+    &__container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 $spacing-md;
+
+      h2 {
+        font-size: 2.5rem;
+        color: $primary;
+        margin-bottom: $spacing-md;
+      }
+
+      p {
+        font-size: 1.2rem;
+        color: rgba($dark, 0.85);
+        margin-bottom: $spacing-lg;
+        line-height: 1.6;
+      }
+    }
+  }
+
+  .gallery {
+    padding: $spacing-xl 0;
+    background-color: $light;
+
+    &__container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 $spacing-md;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: $primary;
+      margin-bottom: $spacing-md;
+    }
+
+    &__intro {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto $spacing-xl;
+      font-size: 1.1rem;
+      color: rgba($dark, 0.85);
+      line-height: 1.6;
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: $spacing-md;
+      margin-bottom: $spacing-xl;
+    }
+
+    &__item {
+      position: relative;
+      aspect-ratio: 1;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba($dark, 0.1);
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+</style>

@@ -34,13 +34,13 @@
   &__logo {
     color: $light;
     font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
     
     @media (max-width: $mobile) {
       font-size: 1.25rem;
     }
-    font-weight: 600;
-    text-decoration: none;
-    transition: color 0.3s ease;
     
     &:hover {
       color: $primary;

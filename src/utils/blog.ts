@@ -12,187 +12,158 @@ interface BlogPost {
 export function getBlogPosts(): BlogPost[] {
   return [
     {
-      id: 'amarres-amor-efectivos',
-      title: 'Los Amarres de Amor Más Efectivos para 2024',
-      excerpt: 'Descubre los rituales más poderosos para recuperar y fortalecer el amor. Técnicas ancestrales con resultados garantizados.',
-      image: 'https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=800&q=80',
-      date: '2024-01-15',
-      category: 'Amarres de Amor',
+      id: 'cuidados-cachorro-teckel',
+      title: 'Cuidados esenciales para tu cachorro Teckel',
+      excerpt: 'Aprende los mejores consejos para cuidar a tu nuevo cachorro Teckel, desde la alimentación hasta el entrenamiento.',
+      image: '/images/blog/cuidados-teckel.jpg',
+      date: '2024-05-03',
+      category: 'Cuidados',
+      readTime: '7 min',
+      content: `
+        Los cachorros Teckel, también conocidos como perros salchicha, son adorables y llenos de energía. Sin embargo, requieren cuidados especiales para asegurar su salud y bienestar. En este artículo, te proporcionaremos los mejores consejos para cuidar a tu nuevo cachorro Teckel.
+
+        ## Alimentación
+
+        Una dieta equilibrada es fundamental para el crecimiento y desarrollo de tu cachorro Teckel. Opta por alimentos de alta calidad, específicos para cachorros de raza pequeña.
+
+        ### Recomendaciones:
+        - Alimento seco de alta calidad
+        - Porciones adecuadas a su edad y tamaño
+        - Agua fresca siempre disponible
+
+        ## Ejercicio
+
+        Los cachorros Teckel son activos y necesitan ejercicio diario, pero sin excederse para evitar problemas en sus largas espaldas.
+
+        ### Actividades recomendadas:
+        - Paseos cortos y frecuentes
+        - Juegos suaves en casa
+        - Evitar saltos y escaleras
+
+        ## Socialización
+
+        La socialización temprana es clave para que tu cachorro Teckel se convierta en un perro equilibrado y sociable.
+
+        ### Consejos:
+        - Exponerlo a diferentes personas, lugares y sonidos
+        - Organizar encuentros con otros cachorros
+        - Reforzar positivamente su comportamiento
+
+        ## Salud
+
+        Los Teckel son propensos a ciertos problemas de salud, por lo que es importante estar atento a cualquier señal.
+
+        ### Problemas comunes:
+        - Problemas de espalda
+        - Obesidad
+        - Problemas dentales
+
+        ## Conclusión
+
+        Cuidar a un cachorro Teckel requiere dedicación y atención, pero la recompensa es un compañero leal y cariñoso. Sigue estos consejos y disfruta de la maravillosa experiencia de tener un perro salchicha en tu vida.
+      `
+    },
+    {
+      id: 'entrenamiento-teckel',
+      title: 'Guía de entrenamiento para cachorros Teckel',
+      excerpt: 'Descubre las técnicas más efectivas para entrenar a tu cachorro Teckel y fomentar un comportamiento positivo.',
+      image: '/images/blog/entrenamiento-teckel.jpg',
+      date: '2024-05-01',
+      category: 'Entrenamiento',
       readTime: '5 min',
       content: `
-Los amarres de amor son rituales ancestrales diseñados para fortalecer lazos afectivos y recuperar relaciones perdidas. En este artículo, exploraremos los métodos más efectivos para 2024, respaldados por años de experiencia y testimonios de éxito.
+        Entrenar a un cachorro Teckel puede ser un desafío, pero con paciencia y las técnicas adecuadas, lograrás que tu perro se convierta en un compañero obediente y feliz. En esta guía, te proporcionaremos los mejores consejos para entrenar a tu cachorro Teckel.
 
-## ¿Qué es un Amarre de Amor?
+        ## Comandos básicos
 
-Un amarre de amor es un ritual espiritual que busca crear o fortalecer una conexión emocional entre dos personas. A diferencia de las creencias populares, no se trata de manipulación, sino de canalizar energías positivas para manifestar el amor verdadero.
+        Comienza con los comandos básicos como "sentado", "quieto" y "ven". Utiliza refuerzo positivo, como premios y elogios, para motivar a tu cachorro.
 
-## Los Rituales Más Efectivos
+        ### Pasos:
+        1. Elige un lugar tranquilo
+        2. Utiliza comandos cortos y claros
+        3. Refuerza positivamente cada logro
 
-### 1. Amarre con Luna Llena
-La energía de la luna llena potencia significativamente los rituales de amor. Este es el momento ideal para realizar amarres que buscan:
-- Reconciliación con la pareja
-- Fortalecimiento de la relación
-- Atracción de un amor verdadero
+        ## Entrenamiento en casa
 
-### 2. Ritual de la Llama Eterna
-Este poderoso ritual utiliza la energía del fuego para:
-- Encender la pasión en la relación
-- Mantener vivo el amor
-- Proteger el vínculo de energías negativas
+        El entrenamiento en casa es fundamental para evitar accidentes y establecer una rutina.
 
-### 3. Endulzamiento Intensivo
-Perfecto para:
-- Suavizar conflictos
-- Mejorar la comunicación
-- Recuperar la armonía en la relación
+        ### Consejos:
+        - Establece horarios regulares para salir a hacer sus necesidades
+        - Utiliza un lugar específico para que haga sus necesidades
+        - Premia cada vez que lo haga en el lugar correcto
 
-## ¿Por Qué Funcionan los Amarres?
+        ## Socialización
 
-Los amarres de amor funcionan porque:
-1. Trabajan con energías naturales
-2. Se realizan en momentos astrológicamente propicios
-3. Requieren intención pura y positiva
+        La socialización es clave para que tu cachorro Teckel se sienta cómodo en diferentes situaciones.
 
-## Resultados y Tiempo de Espera
+        ### Recomendaciones:
+        - Exponerlo a diferentes personas, lugares y sonidos
+        - Organizar encuentros con otros cachorros
+        - Reforzar positivamente su comportamiento
 
-Los resultados suelen manifestarse en:
-- Casos simples: 7 días
-- Situaciones complejas: 21 días
-- Casos especiales: hasta 40 días
+        ## Problemas de comportamiento
 
-## Precauciones y Recomendaciones
+        Si tu cachorro Teckel presenta problemas de comportamiento, como ladridos excesivos o mordiscos, busca ayuda profesional.
 
-Es importante:
-- Mantener una intención pura
-- Respetar los tiempos del ritual
-- Confiar en el proceso
-- Trabajar con expertos calificados
+        ### Soluciones:
+        - Identifica la causa del problema
+        - Utiliza técnicas de modificación de conducta
+        - Consulta a un entrenador canino
 
-## Conclusión
+        ## Conclusión
 
-Los amarres de amor son una herramienta poderosa cuando se realizan correctamente y con la guía adecuada. Si estás considerando realizar un amarre, es crucial buscar ayuda profesional para garantizar resultados positivos y duraderos.
-
-¿Necesitas ayuda con un amarre de amor? Contáctanos para una consulta gratuita y personalizada.`
+        Entrenar a un cachorro Teckel requiere paciencia y constancia, pero la recompensa es un compañero leal y obediente. Sigue estos consejos y disfruta de la maravillosa experiencia de tener un perro salchicha bien educado.
+      `
     },
     {
-      id: 'ritual-luna-llena',
-      title: 'Ritual de Luna Llena para Atraer el Amor Verdadero',
-      excerpt: 'Aprovecha el poder de la luna llena para manifestar el amor en tu vida. Ritual paso a paso con ingredientes naturales.',
-      image: 'https://images.unsplash.com/photo-1532767153582-b1a0e5145009?auto=format&fit=crop&w=800&q=80',
-      date: '2024-01-10',
-      category: 'Rituales',
-      readTime: '4 min',
-      content: `
-La luna llena es el momento más poderoso para realizar rituales de amor. Su energía magnifica nuestras intenciones y potencia los resultados de cualquier trabajo espiritual. Descubre cómo aprovechar este poder para manifestar el amor verdadero en tu vida.
-
-## El Poder de la Luna Llena
-
-La luna llena representa:
-- Culminación de ciclos
-- Máxima energía espiritual
-- Momento ideal para manifestaciones
-
-## Preparación del Ritual
-
-### Materiales Necesarios:
-- Velas rojas y rosas
-- Pétalos de rosa
-- Canela en polvo
-- Miel pura
-- Papel rosa
-- Aceite esencial de rosa
-
-### Momento Ideal:
-El ritual debe realizarse:
-- Durante la luna llena
-- Entre las 10 PM y 12 AM
-- En un espacio tranquilo y privado
-
-## Pasos del Ritual
-
-1. Limpieza Energética
-2. Preparación del Altar
-3. Invocación Lunar
-4. Manifestación del Deseo
-5. Agradecimiento
-
-## Cuidados Posteriores
-
-Es importante:
-- Mantener la fe en el proceso
-- Estar abierto a las señales
-- Practicar la gratitud
-
-## Resultados Esperados
-
-Los efectos suelen manifestarse:
-- Primeras señales: 3-7 días
-- Cambios significativos: 2-4 semanas
-- Manifestación completa: 1-3 meses
-
-¿Necesitas ayuda para realizar este ritual? Contáctanos para una guía personalizada.`
-    },
-    {
-      id: 'limpieza-energetica',
-      title: 'Limpieza Energética para Renovar tu Espíritu',
-      excerpt: 'Elimina las energías negativas y abre las puertas a nuevas oportunidades con esta poderosa limpieza espiritual.',
-      image: 'https://images.unsplash.com/photo-1528715471579-d1bcf0ba5e83?auto=format&fit=crop&w=800&q=80',
-      date: '2024-01-05',
-      category: 'Limpiezas',
+      id: 'salud-teckel',
+      title: 'Problemas de salud comunes en cachorros Teckel',
+      excerpt: 'Infórmate sobre los problemas de salud más frecuentes en los Teckel y cómo prevenirlos.',
+      image: '/images/blog/salud-teckel.jpg',
+      date: '2024-04-28',
+      category: 'Salud',
       readTime: '6 min',
       content: `
-La limpieza energética es fundamental para mantener nuestro bienestar espiritual y emocional. Aprende cómo realizar una limpieza profunda que transformará tu vida y abrirá nuevos caminos hacia el amor y la abundancia.
+        Los cachorros Teckel, también conocidos como perros salchicha, son propensos a ciertos problemas de salud debido a su particular anatomía. En este artículo, te informaremos sobre los problemas de salud más frecuentes en los Teckel y cómo prevenirlos.
 
-## ¿Por Qué es Necesaria la Limpieza Energética?
+        ## Problemas de espalda
 
-Las energías negativas pueden:
-- Bloquear oportunidades
-- Afectar relaciones
-- Disminuir nuestra vitalidad
+        Los Teckel son propensos a problemas de espalda debido a su larga columna vertebral.
 
-## Señales de Bloqueo Energético
+        ### Recomendaciones:
+        - Evitar saltos y escaleras
+        - Mantener un peso saludable
+        - Utilizar arnés en lugar de collar
 
-- Mala suerte persistente
-- Problemas en las relaciones
-- Falta de motivación
-- Cansancio inexplicable
+        ## Obesidad
 
-## Técnicas de Limpieza
+        La obesidad es un problema común en los Teckel, ya que tienden a ganar peso fácilmente.
 
-### 1. Sahumerio Purificador
-Ingredientes:
-- Salvia blanca
-- Palo santo
-- Incienso natural
+        ### Consejos:
+        - Controlar las porciones de comida
+        - Proporcionar ejercicio diario
+        - Evitar darles comida de la mesa
 
-### 2. Baño de Hierbas
-Utiliza:
-- Ruda
-- Romero
-- Albahaca
-- Laurel
+        ## Problemas dentales
 
-### 3. Limpieza con Cuarzo
-Pasos:
-1. Selección del cristal
-2. Programación
-3. Aplicación
+        Los Teckel son propensos a problemas dentales, como la acumulación de sarro y la enfermedad periodontal.
 
-## Mantenimiento Energético
+        ### Cuidados:
+        - Cepillar sus dientes regularmente
+        - Proporcionar juguetes para masticar
+        - Llevarlo al veterinario para revisiones dentales
 
-Recomendaciones:
-- Limpieza semanal básica
-- Protección diaria
-- Meditación regular
+        ## Otros problemas de salud
 
-## Beneficios
+        Además de los problemas mencionados, los Teckel también pueden ser propensos a:
+        - Problemas oculares
+        - Problemas cardíacos
+        - Problemas de piel
 
-- Mayor claridad mental
-- Mejores relaciones
-- Atracción de abundancia
-- Protección espiritual
+        ## Conclusión
 
-¿Necesitas una limpieza energética profesional? Contáctanos para una sesión personalizada.`
+        Conocer los problemas de salud más comunes en los Teckel te permitirá tomar medidas preventivas y asegurar una vida larga y saludable para tu compañero peludo. Sigue estos consejos y disfruta de la maravillosa experiencia de tener un perro salchicha en tu vida.
+      `
     }
   ];
 }

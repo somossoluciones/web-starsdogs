@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import TestimonialsCarousel from '../components/TestimonialsCarousel.astro';
+import TeckelColors from '../components/TeckelColors.astro'; // Importar el nuevo componente
 import { getServices } from '../utils/services';
 
 const services = getServices();
@@ -9,49 +10,48 @@ const services = getServices();
 const schema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "Centro Espiritual Luz Interior",
-  "description": "Centro espiritual especializado en amarres de amor, retorno de pareja, endulzamientos y limpias espirituales. Expertos en recuperar el amor perdido con resultados garantizados.",
+  "name": "StarsDogs",
+  "description": "Venta de cachorros Teckel (Dachshund) de alta calidad en Medellín, Colombia. Envíos nacionales e internacionales, especialmente a Estados Unidos.",
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Ciudad de México",
-    "addressCountry": "MX"
+    "addressLocality": "Medellín",
+    "addressCountry": "CO"
   },
-  "telephone": "+12543563381",
+  "telephone": "+573218021869",
   "priceRange": "$$",
-  "openingHours": "Mo-Sa 09:00-20:00",
+  "openingHours": "Lu-Sa 09:00-18:00",
   "sameAs": [
-    "https://www.facebook.com/centroluzmistica",
-    "https://www.instagram.com/luzinterior.espiritual"
+    "https://www.instagram.com/starsdogsmedellin/"
   ]
 };
 ---
 
 <Layout 
-  title="Amarres de Amor y Retorno de Pareja Garantizados | Centro Espiritual"
-  description="Especialistas en amarres de amor, retorno de pareja y endulzamientos. Recupera a tu ex pareja con resultados garantizados en 7 días. Primera consulta gratis. ¡Contáctanos ahora!"
+  title="StarsDogs | Cachorros Teckel (Dachshund) en Venta"
+  description="Encuentra tu cachorro Teckel perfecto en StarsDogs. Ofrecemos cachorros Dachshund de alta calidad con envíos nacionales e internacionales desde Medellín, Colombia."
 >
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   
   <main>
     <section class="hero">
       <div class="hero__container">
-        <h1 class="hero__title">Recupera el Amor de Tu Vida Hoy</h1>
-        <p class="hero__subtitle">Expertos en amarres de amor, retorno de pareja y endulzamientos con resultados garantizados</p>
+        <h1 class="hero__title">Tu Próximo Compañero Teckel te Espera</h1>
+        <p class="hero__subtitle">Cachorros Dachshund de la más alta calidad, criados con amor en Medellín para el mundo.</p>
         <div class="hero__cta">
-          <a href="https://wa.me/12543563381" class="btn btn--primary">Consulta Gratuita</a>
-          <p class="hero__guarantee">✨ Resultados en 7 días o menos</p>
+          <a href="https://wa.me/573218021869" class="btn btn--primary">¡Contáctanos!</a>
+          <p class="hero__guarantee">🐶 Amor incondicional garantizado</p>
         </div>
       </div>
     </section>
 
     <section class="services" id="servicios">
-      <h2 class="services__title">Nuestros Servicios Espirituales</h2>
+      <h2 class="services__title">Nuestros Cachorros Teckel</h2>
       <div class="services__grid">
-        {services.map(service => (
+        {services.map(puppy => (
           <div class="services__card">
             <img 
-              src={service.image} 
-              alt={service.title}
+              src={puppy.image} 
+              alt={puppy.name}
               class="services__image"
               width="300"
               height="200"
@@ -59,17 +59,20 @@ const schema = {
             />
             <div class="services__content">
               <h3 class="services__title">
-                <a href={`/servicios/${service.id}`}>{service.title}</a>
+                <a href={`/servicios/${puppy.id}`}>{puppy.name}</a>
               </h3>
-              <p class="services__description">{service.description}</p>
-              <a href="https://wa.me/12543563381" class="services__cta">
-                Consulta Gratuita
+              <p class="services__description">{puppy.description}</p>
+              <p class="services__age">Edad: {puppy.age}</p>
+              <a href="https://wa.me/573218021869" class="services__cta">
+                ¡Quiero conocerlo!
               </a>
             </div>
           </div>
         ))}
       </div>
     </section>
+
+    <TeckelColors /> <!-- Agregar el nuevo componente aquí -->
 
     <TestimonialsCarousel />
   </main>

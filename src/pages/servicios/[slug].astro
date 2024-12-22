@@ -3,52 +3,61 @@ import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import { getServices } from '../../utils/services';
 
 export async function getStaticPaths() {
-  const services = getServices();
-  return services.map(service => ({
-    params: { slug: service.id },
-    props: { service },
+  const puppies = getServices();
+  return puppies.map(puppy => ({
+    params: { slug: puppy.id },
+    props: { puppy },
   }));
 }
 
-const { service } = Astro.props;
+const { puppy } = Astro.props;
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": service.title,
-  "description": service.description,
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "Centro Espiritual",
-    "image": service.image
+  "@type": "Product",
+  "name": puppy.name,
+  "description": puppy.description,
+  "image": puppy.image,
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "price": "TBD"
+  },
+  "brand": {
+    "@type": "Brand",
+    "name": "StarsDogs"
   }
 };
 ---
 
 <ServiceLayout
-  title={service.title}
-  description={service.description}
-  ogImage={service.image}
+  title={`Cachorro Teckel ${puppy.name}`}
+  description={puppy.description}
+  ogImage={puppy.image}
 >
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-  
+
   <article class="service">
     <header>
-      <h1>{service.title}</h1>
-      <img 
-        src={service.image} 
-        alt={service.title}
+      <h1>{puppy.name}</h1>
+      <img
+        src={puppy.image}
+        alt={puppy.name}
         class="service__image"
         width="1200"
         height="630"
       />
     </header>
 
-    <div class="service__content" set:html={service.content} />
+    <div class="service__content">
+      <p>{puppy.description}</p>
+      <p><strong>Edad:</strong> {puppy.age}</p>
+    </div>
 
     <footer class="service__cta">
-      <a href="https://wa.me/12543563381" class="btn btn--primary">
-        Consulta Gratuita por WhatsApp
+<a href="https://wa.me/573218021869" class="btn btn--primary">
+        ¡Quiero a {puppy.name}!
       </a>
     </footer>
   </article>

@@ -1,7 +1,8 @@
 ---
 const links = [
   { text: "Inicio", href: "/" },
-  { text: "Servicios", href: "/servicios" },
+  { text: "Cachorros", href: "/servicios" },
+  { text: "Clientes Felices", href: "/clientes-felices" },
   { text: "Blog", href: "/blog" }
 ];
 ---
@@ -9,7 +10,7 @@ const links = [
 <nav class="nav">
   <div class="nav__container">
     <div class="nav__content">
-      <a href="/" class="nav__logo">Centro Espiritual</a>
+      <a href="/" class="nav__logo">StarsDogs</a>
       <div class="nav__links">
         {links.map(link => (
           <a href={link.href} class="nav__link">{link.text}</a>
