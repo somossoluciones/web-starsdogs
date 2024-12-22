@@ -1,0 +1,55 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import { getServices } from '../../utils/services';
+
+export async function getStaticPaths() {
+  const services = getServices();
+  return services.map(service => ({
+    params: { slug: service.id },
+    props: { service },
+  }));
+}
+
+const { service } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": service.title,
+  "description": service.description,
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Centro Espiritual",
+    "image": service.image
+  }
+};
+---
+
+<ServiceLayout
+  title={service.title}
+  description={service.description}
+  ogImage={service.image}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  
+  <article class="service">
+    <header>
+      <h1>{service.title}</h1>
+      <img 
+        src={service.image} 
+        alt={service.title}
+        class="service__image"
+        width="1200"
+        height="630"
+      />
+    </header>
+
+    <div class="service__content" set:html={service.content} />
+
+    <footer class="service__cta">
+      <a href="https://wa.me/12543563381" class="btn btn--primary">
+        Consulta Gratuita por WhatsApp
+      </a>
+    </footer>
+  </article>
+</ServiceLayout>

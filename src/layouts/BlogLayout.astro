@@ -1,0 +1,22 @@
+---
+import Layout from './Layout.astro';
+import '../styles/sections/_blog.scss';
+import '../styles/sections/_blog-post.scss';
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+}
+
+const { title, description, ogImage } = Astro.props;
+---
+
+<Layout 
+  title={`${title} | Centro Espiritual`}
+  description={description}
+>
+  <main class="blog blog--dark">
+    <slot />
+  </main>
+</Layout>

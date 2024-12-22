@@ -1,0 +1,21 @@
+---
+import Layout from './Layout.astro';
+import '../styles/sections/_service.scss';
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+}
+
+const { title, description, ogImage } = Astro.props;
+---
+
+<Layout 
+  title={`${title} | Centro Espiritual`}
+  description={description}
+>
+  <main class="service service--dark">
+    <slot />
+  </main>
+</Layout>

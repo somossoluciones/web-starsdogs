@@ -1,0 +1,31 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import { getServices } from '../../utils/services';
+
+const services = getServices();
+---
+
+<Layout 
+  title="Servicios Espirituales | Amarres de Amor y Retorno de Pareja"
+  description="Especialistas en amarres de amor, retorno de pareja, endulzamientos y limpiezas espirituales. Resultados garantizados en 7 días. Primera consulta gratis."
+>
+  <main class="services-page">
+    <div class="services-page__header">
+      <h1>Nuestros Servicios Espirituales</h1>
+      <p>Soluciones efectivas para el amor y la prosperidad</p>
+    </div>
+    
+    <div class="services-page__grid">
+      {services.map(service => (
+        <ServiceCard 
+          title={service.title}
+          description={service.description}
+          image={service.image}
+          url={`/servicios/${service.id}`}
+          duration={service.duration}
+        />
+      ))}
+    </div>
+  </main>
+</Layout>

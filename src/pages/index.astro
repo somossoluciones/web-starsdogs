@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import TestimonialsCarousel from '../components/TestimonialsCarousel.astro';
+import { getServices } from '../utils/services';
+
+const services = getServices();
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Centro Espiritual Luz Interior",
+  "description": "Centro espiritual especializado en amarres de amor, retorno de pareja, endulzamientos y limpias espirituales. Expertos en recuperar el amor perdido con resultados garantizados.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Ciudad de México",
+    "addressCountry": "MX"
+  },
+  "telephone": "+12543563381",
+  "priceRange": "$$",
+  "openingHours": "Mo-Sa 09:00-20:00",
+  "sameAs": [
+    "https://www.facebook.com/centroluzmistica",
+    "https://www.instagram.com/luzinterior.espiritual"
+  ]
+};
+---
+
+<Layout 
+  title="Amarres de Amor y Retorno de Pareja Garantizados | Centro Espiritual"
+  description="Especialistas en amarres de amor, retorno de pareja y endulzamientos. Recupera a tu ex pareja con resultados garantizados en 7 días. Primera consulta gratis. ¡Contáctanos ahora!"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  
+  <main>
+    <section class="hero">
+      <div class="hero__container">
+        <h1 class="hero__title">Recupera el Amor de Tu Vida Hoy</h1>
+        <p class="hero__subtitle">Expertos en amarres de amor, retorno de pareja y endulzamientos con resultados garantizados</p>
+        <div class="hero__cta">
+          <a href="https://wa.me/12543563381" class="btn btn--primary">Consulta Gratuita</a>
+          <p class="hero__guarantee">✨ Resultados en 7 días o menos</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="servicios">
+      <h2 class="services__title">Nuestros Servicios Espirituales</h2>
+      <div class="services__grid">
+        {services.map(service => (
+          <div class="services__card">
+            <img 
+              src={service.image} 
+              alt={service.title}
+              class="services__image"
+              width="300"
+              height="200"
+              loading="lazy"
+            />
+            <div class="services__content">
+              <h3 class="services__title">
+                <a href={`/servicios/${service.id}`}>{service.title}</a>
+              </h3>
+              <p class="services__description">{service.description}</p>
+              <a href="https://wa.me/12543563381" class="services__cta">
+                Consulta Gratuita
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <TestimonialsCarousel />
+  </main>
+</Layout>

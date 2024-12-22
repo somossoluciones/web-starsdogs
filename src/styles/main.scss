@@ -1,0 +1,26 @@
+@use 'variables' as *;
+@use 'reset';
+@use 'components/navigation';
+@use 'components/buttons';
+@use 'components/whatsapp';
+@use 'components/blog-card';
+@use 'components/service-card';
+@use 'sections/hero';
+@use 'sections/services';
+@use 'sections/services-page';
+@use 'sections/benefits';
+@use 'sections/contact';
+@use 'sections/testimonials';
+@use 'sections/blog';
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,36 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+  url: string;
+  price?: string;
+  duration?: string;
+}
+
+const { title, description, image, url, price, duration } = Astro.props;
+---
+
+<article class="service-card">
+  <a href={url} class="service-card__image-link">
+    <img 
+      src={image} 
+      alt={title}
+      class="service-card__image"
+      width="400"
+      height="225"
+      loading="lazy"
+    />
+  </a>
+  <div class="service-card__content">
+    <div class="service-card__meta">
+      {price && <span class="service-card__price">{price}</span>}
+      {duration && <span class="service-card__duration">{duration}</span>}
+    </div>
+    <h2 class="service-card__title">
+      <a href={url}>{title}</a>
+    </h2>
+    <p class="service-card__description">{description}</p>
+    <a href={url} class="service-card__link">Ver más detalles →</a>
+  </div>
+</article>

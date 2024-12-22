@@ -1,0 +1,82 @@
+@use '../variables' as *;
+
+.blog-card {
+  background: $light;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba($dark, 0.1);
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba($dark, 0.15);
+  }
+  
+  &__image-link {
+    display: block;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+  }
+  
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  
+  &__content {
+    padding: $spacing-md;
+  }
+  
+  &__meta {
+    display: flex;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-sm;
+    font-size: 0.875rem;
+  }
+  
+  &__category {
+    color: $primary;
+    font-weight: 500;
+  }
+  
+  &__date,
+  &__read-time {
+    color: rgba($dark, 0.7);
+  }
+  
+  &__title {
+    font-size: 1.5rem;
+    margin-bottom: $spacing-sm;
+    
+    a {
+      color: $dark;
+      text-decoration: none;
+      
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+  
+  &__excerpt {
+    color: rgba($dark, 0.85);
+    margin-bottom: $spacing-md;
+    line-height: 1.6;
+  }
+  
+  &__link {
+    color: $primary;
+    text-decoration: none;
+    font-weight: 500;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

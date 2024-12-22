@@ -1,0 +1,29 @@
+@use '../variables' as *;
+
+.whatsapp-float {
+  position: fixed;
+  bottom: $spacing-md;
+  right: $spacing-md;
+  z-index: 100;
+  
+  &__button {
+    background: #25D366;
+    color: $light;
+    padding: $spacing-sm;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.1);
+    }
+    
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

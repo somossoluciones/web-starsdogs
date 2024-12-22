@@ -1,0 +1,117 @@
+@use '../variables' as *;
+
+.services {
+  padding: $spacing-xl 0;
+  background-color: $light;
+
+  &__title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: $primary;
+    margin-bottom: $spacing-xl;
+
+    @media (max-width: $mobile) {
+      font-size: 2rem;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: $spacing-md;
+    padding: $spacing-lg;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    @media (max-width: $tablet) {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      padding: $spacing-md;
+    }
+    
+    @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+      padding: $spacing-sm;
+    }
+  }
+  
+  &__card {
+    background: $light;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba($dark, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba($dark, 0.2);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    
+    @media (max-width: $mobile) {
+      max-width: 100%;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      
+      .services__image {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+    transition: transform 0.3s ease;
+  }
+
+  &__content {
+    padding: $spacing-md;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__cta {
+    display: inline-block;
+    background: $primary;
+    color: $light;
+    padding: $spacing-xs $spacing-md;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: $spacing-md;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba($primary, 0.3);
+    }
+  }
+
+  &__title {
+    color: $dark;
+    font-size: 1.5rem;
+    margin-bottom: $spacing-sm;
+    font-weight: 600;
+    
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  &__description {
+    color: rgba($dark, 0.85);
+    line-height: 1.6;
+    margin-bottom: $spacing-md;
+  }
+}

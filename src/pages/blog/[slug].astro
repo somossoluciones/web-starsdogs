@@ -1,0 +1,103 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import { getBlogPosts } from '../../utils/blog';
+
+export async function getStaticPaths() {
+  const posts = getBlogPosts();
+  return posts.map(post => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": post.title,
+  "image": post.image,
+  "datePublished": post.date,
+  "author": {
+    "@type": "Organization",
+    "name": "Centro Espiritual"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Centro Espiritual",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://centroespiritual.com/logo.png"
+    }
+  },
+  "description": post.excerpt
+};
+---
+
+<BlogLayout
+  title={post.title}
+  description={post.excerpt}
+  ogImage={post.image}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  
+  <article class="blog-post">
+    <header class="blog-post__header">
+      <div class="blog-post__meta">
+        <span class="blog-post__category">{post.category}</span>
+        <time class="blog-post__date" datetime={post.date}>
+          {new Date(post.date).toLocaleDateString('es-ES', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          })}
+        </time>
+        <span class="blog-post__read-time">{post.readTime}</span>
+      </div>
+      <h1 class="blog-post__title">{post.title}</h1>
+      <img 
+        src={post.image} 
+        alt={post.title}
+        class="blog-post__image"
+        width="1200"
+        height="630"
+      />
+    </header>
+
+    <div class="blog-post__content">
+      <slot />
+    </div>
+
+    <footer class="blog-post__footer">
+      <div class="blog-post__share">
+        <h3>Comparte este artículo</h3>
+        <div class="blog-post__social">
+          <a 
+            href={`https://www.facebook.com/sharer/sharer.php?u=${Astro.url}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="blog-post__social-link"
+          >
+            Facebook
+          </a>
+          <a 
+            href={`https://twitter.com/intent/tweet?url=${Astro.url}&text=${encodeURIComponent(post.title)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="blog-post__social-link"
+          >
+            Twitter
+          </a>
+          <a 
+            href={`https://wa.me/?text=${encodeURIComponent(`${post.title} ${Astro.url}`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="blog-post__social-link"
+          >
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </footer>
+  </article>
+</BlogLayout>

@@ -1,0 +1,19 @@
+@use '../variables' as *;
+
+.btn {
+  &--primary {
+    background: linear-gradient(135deg, $primary, darken($primary, 10%));
+    color: $light;
+    padding: $spacing-sm $spacing-md;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    
+    &:hover {
+      transform: translateY(-2px);
+      border-color: rgba($light, 0.3);
+      box-shadow: 0 4px 15px rgba($primary, 0.3);
+    }
+  }
+}

@@ -1,0 +1,44 @@
+---
+interface Props {
+  title: string;
+  excerpt: string;
+  image: string;
+  url: string;
+  date: string;
+  category: string;
+  readTime: string;
+}
+
+const { title, excerpt, image, url, date, category, readTime } = Astro.props;
+
+const formattedDate = new Date(date).toLocaleDateString('es-ES', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+---
+
+<article class="blog-card">
+  <a href={url} class="blog-card__image-link">
+    <img 
+      src={image} 
+      alt={title}
+      class="blog-card__image"
+      width="400"
+      height="225"
+      loading="lazy"
+    />
+  </a>
+  <div class="blog-card__content">
+    <div class="blog-card__meta">
+      <span class="blog-card__category">{category}</span>
+      <span class="blog-card__date">{formattedDate}</span>
+      <span class="blog-card__read-time">{readTime}</span>
+    </div>
+    <h2 class="blog-card__title">
+      <a href={url}>{title}</a>
+    </h2>
+    <p class="blog-card__excerpt">{excerpt}</p>
+    <a href={url} class="blog-card__link">Leer más →</a>
+  </div>
+</article>

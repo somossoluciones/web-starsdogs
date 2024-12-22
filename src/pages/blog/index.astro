@@ -1,0 +1,60 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BlogCard from '../../components/BlogCard.astro';
+
+const posts = [
+  {
+    id: 'amarres-amor-efectivos',
+    title: 'Los Amarres de Amor Más Efectivos para 2024',
+    excerpt: 'Descubre los rituales más poderosos para recuperar y fortalecer el amor. Técnicas ancestrales con resultados garantizados.',
+    image: 'https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=800&q=80',
+    date: '2024-01-15',
+    category: 'Amarres',
+    readTime: '5 min'
+  },
+  {
+    id: 'ritual-luna-llena',
+    title: 'Ritual de Luna Llena para Atraer el Amor Verdadero',
+    excerpt: 'Aprovecha el poder de la luna llena para manifestar el amor en tu vida. Ritual paso a paso con ingredientes naturales.',
+    image: 'https://images.unsplash.com/photo-1532767153582-b1a0e5145009?auto=format&fit=crop&w=800&q=80',
+    date: '2024-01-10',
+    category: 'Rituales',
+    readTime: '4 min'
+  },
+  {
+    id: 'limpieza-energetica',
+    title: 'Limpieza Energética para Renovar tu Espíritu',
+    excerpt: 'Elimina las energías negativas y abre las puertas a nuevas oportunidades con esta poderosa limpieza espiritual.',
+    image: 'https://images.unsplash.com/photo-1528715471579-d1bcf0ba5e83?auto=format&fit=crop&w=800&q=80',
+    date: '2024-01-05',
+    category: 'Limpiezas',
+    readTime: '6 min'
+  }
+];
+---
+
+<Layout 
+  title="Blog Espiritual | Amarres de Amor y Rituales"
+  description="Descubre los secretos de los amarres de amor, rituales y limpiezas espirituales. Consejos y guías de expertos para transformar tu vida amorosa."
+>
+  <main class="blog">
+    <div class="blog__header">
+      <h1>Blog Espiritual</h1>
+      <p>Conocimientos ancestrales para el amor y la espiritualidad</p>
+    </div>
+    
+    <div class="blog__grid">
+      {posts.map(post => (
+        <BlogCard 
+          title={post.title}
+          excerpt={post.excerpt}
+          image={post.image}
+          url={`/blog/${post.id}`}
+          date={post.date}
+          category={post.category}
+          readTime={post.readTime}
+        />
+      ))}
+    </div>
+  </main>
+</Layout>

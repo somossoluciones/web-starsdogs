@@ -1,0 +1,31 @@
+@use '../variables' as *;
+
+.services-page {
+  padding: calc(60px + $spacing-xl) $spacing-md $spacing-xl;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: $dark-gradient;
+  min-height: 100vh;
+  
+  &__header {
+    text-align: center;
+    margin-bottom: $spacing-xl;
+    
+    h1 {
+      font-size: 2.5rem;
+      color: $light;
+      margin-bottom: $spacing-sm;
+    }
+    
+    p {
+      color: rgba($light, 0.8);
+      font-size: 1.2rem;
+    }
+  }
+  
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: $spacing-lg;
+  }
+}

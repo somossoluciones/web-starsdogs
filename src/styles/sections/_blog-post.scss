@@ -1,0 +1,119 @@
+@use '../variables' as *;
+
+.blog-post {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: $spacing-md;
+  
+  @media (max-width: $mobile) {
+    padding: $spacing-sm;
+  }
+  
+  &__header {
+    margin-bottom: $spacing-xl;
+    
+    @media (max-width: $mobile) {
+      margin-bottom: $spacing-lg;
+    }
+  }
+  
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-xs;
+    margin-bottom: $spacing-sm;
+    font-size: 0.875rem;
+  }
+  
+  &__category {
+    color: $primary;
+    font-weight: 500;
+  }
+  
+  &__date,
+  &__read-time {
+    color: rgba($light, 0.7);
+  }
+  
+  &__title {
+    font-size: 2.5rem;
+    color: $light;
+    margin-bottom: $spacing-md;
+    line-height: 1.2;
+    
+    @media (max-width: $mobile) {
+      font-size: 2rem;
+    }
+  }
+  
+  &__image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: $spacing-lg;
+  }
+  
+  &__content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba($light, 0.9);
+    
+    h2 {
+      font-size: 1.8rem;
+      color: $light;
+      margin: $spacing-lg 0 $spacing-md;
+    }
+    
+    h3 {
+      font-size: 1.4rem;
+      color: $light;
+      margin: $spacing-md 0 $spacing-sm;
+    }
+    
+    p {
+      margin-bottom: $spacing-md;
+    }
+    
+    ul, ol {
+      margin-bottom: $spacing-md;
+      padding-left: $spacing-md;
+    }
+    
+    li {
+      margin-bottom: $spacing-xs;
+    }
+  }
+  
+  &__footer {
+    margin-top: $spacing-xl;
+    padding-top: $spacing-lg;
+    border-top: 1px solid rgba($text, 0.1);
+  }
+  
+  &__share {
+    h3 {
+      font-size: 1.2rem;
+      color: $light;
+      margin-bottom: $spacing-sm;
+    }
+  }
+  
+  &__social {
+    display: flex;
+    gap: $spacing-sm;
+  }
+  
+  &__social-link {
+    padding: $spacing-xs $spacing-sm;
+    border-radius: 20px;
+    background: rgba($primary, 0.1);
+    color: $primary;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: $primary;
+      color: $light;
+    }
+  }
+}

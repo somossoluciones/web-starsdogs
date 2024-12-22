@@ -1,0 +1,98 @@
+---
+const testimonials = [
+  {
+    name: "María González",
+    role: "Cliente Satisfecha",
+    text: "Gracias a sus amarres de amor, mi pareja regresó en menos de una semana. Su trabajo es verdaderamente efectivo y profesional.",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&h=120&q=80"
+  },
+  {
+    name: "Carlos Rodríguez",
+    role: "Cliente",
+    text: "El ritual de endulzamiento funcionó perfectamente. Mi relación mejoró notablemente y ahora somos más felices que nunca.",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&h=120&q=80"
+  },
+  {
+    name: "Ana Martínez",
+    role: "Cliente Verificada",
+    text: "La limpieza espiritual cambió mi vida por completo. Los bloqueos desaparecieron y el amor llegó naturalmente.",
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=120&h=120&q=80"
+  }
+];
+---
+
+<section class="testimonials" id="testimonios">
+  <div class="testimonials__container">
+    <h2 class="testimonials__title">Lo que dicen nuestros clientes</h2>
+    <div class="swiper testimonials__slider">
+      <div class="swiper-wrapper">
+        {testimonials.map(testimonial => (
+          <div class="swiper-slide">
+            <div class="testimonials__card">
+              <div class="testimonials__avatar">
+                <img
+                  src={testimonial.image} 
+                  alt={testimonial.name}
+                  width="60"
+                  height="60"
+                  loading="lazy"
+                />
+              </div>
+              <blockquote class="testimonials__quote">{testimonial.text}</blockquote>
+              <div class="testimonials__author">
+                <strong>{testimonial.name}</strong>
+                <span>{testimonial.role}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import Swiper from 'swiper';
+  import { Pagination, Navigation, Autoplay } from 'swiper/modules';
+  import 'swiper/css';
+  import 'swiper/css/pagination';
+  import 'swiper/css/navigation';
+
+  function initSwiper() {
+    new Swiper('.testimonials__slider', {
+      modules: [Pagination, Navigation, Autoplay],
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+      },
+    });
+  }
+
+  // Initialize on page load
+  initSwiper();
+
+  // Re-initialize when navigating between pages
+  document.addEventListener('astro:page-load', initSwiper);
+</script>

@@ -1,0 +1,120 @@
+@use '../variables' as *;
+
+.service {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: calc(60px + $spacing-xl) $spacing-md $spacing-xl;
+  
+  @media (max-width: $mobile) {
+    padding: calc(60px + $spacing-lg) $spacing-sm $spacing-lg;
+  }
+  
+  &--dark {
+    background: $dark-gradient;
+    min-height: 100vh;
+    color: $light;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: $spacing-lg;
+    box-shadow: 0 4px 20px rgba($dark, 0.3);
+    
+    @media (max-width: $mobile) {
+      border-radius: 8px;
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  &__content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    
+    @media (max-width: $mobile) {
+      font-size: 1rem;
+    }
+  }
+
+  &__cta {
+    margin-top: $spacing-xl;
+    text-align: center;
+    
+    @media (max-width: $mobile) {
+      margin-top: $spacing-lg;
+    }
+    
+    .btn--primary {
+      width: 100%;
+      max-width: 300px;
+      padding: $spacing-sm $spacing-lg;
+      
+      @media (max-width: $mobile) {
+        max-width: none;
+      }
+    }
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    color: $light;
+    margin-bottom: $spacing-lg;
+    text-align: center;
+    
+    @media (max-width: $mobile) {
+      font-size: 2rem;
+      margin-bottom: $spacing-md;
+    }
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    color: $light;
+    margin: $spacing-lg 0 $spacing-md;
+    
+    @media (max-width: $mobile) {
+      font-size: 1.5rem;
+      margin: $spacing-md 0 $spacing-sm;
+    }
+  }
+  
+  h3 {
+    font-size: 1.4rem;
+    color: $light;
+    margin: $spacing-md 0 $spacing-sm;
+    
+    @media (max-width: $mobile) {
+      font-size: 1.2rem;
+    }
+  }
+  
+  p {
+    color: rgba($light, 0.9);
+    margin-bottom: $spacing-md;
+    line-height: 1.8;
+    
+    @media (max-width: $mobile) {
+      margin-bottom: $spacing-sm;
+    }
+  }
+  
+  ul, ol {
+    color: rgba($light, 0.9);
+    margin-bottom: $spacing-md;
+    padding-left: $spacing-md;
+    
+    @media (max-width: $mobile) {
+      padding-left: $spacing-sm;
+      margin-bottom: $spacing-sm;
+    }
+    
+    li {
+      margin-bottom: $spacing-xs;
+      
+      @media (max-width: $mobile) {
+        margin-bottom: calc($spacing-xs / 2);
+      }
+    }
+  }
+}

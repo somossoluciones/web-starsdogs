@@ -1,0 +1,93 @@
+@use '../variables' as *;
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba($dark, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid $glass-border;
+
+  @media (max-width: $mobile) {
+    padding: $spacing-xs 0;
+  }
+  
+  &__container {
+    width: 100%;
+    padding: $spacing-sm $spacing-md;
+    
+    @media (max-width: $mobile) {
+      padding: $spacing-xs $spacing-sm;
+    }
+  }
+  
+  &__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  &__logo {
+    color: $light;
+    font-size: 1.5rem;
+    
+    @media (max-width: $mobile) {
+      font-size: 1.25rem;
+    }
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: $primary;
+    }
+  }
+  
+  &__links {
+    display: flex;
+    gap: $spacing-md;
+    align-items: center;
+    
+    @media (max-width: $mobile) {
+      gap: $spacing-sm;
+    }
+  }
+  
+  &__link {
+    color: $light;
+    text-decoration: none;
+    font-weight: 500;
+    padding: $spacing-xs $spacing-sm;
+    transition: all 0.3s ease;
+    position: relative;
+    
+    @media (max-width: $mobile) {
+      padding: $spacing-xs;
+      font-size: 0.9rem;
+    }
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: $primary;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    
+    &:hover {
+      color: $primary;
+      
+      &::after {
+        width: 80%;
+      }
+    }
+  }
+}
