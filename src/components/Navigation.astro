@@ -2,20 +2,73 @@
 const links = [
   { text: "Inicio", href: "/" },
   { text: "Cachorros", href: "/servicios" },
+  { text: "Colores", href: "#colores" },
   { text: "Clientes Felices", href: "/clientes-felices" },
-  { text: "Blog", href: "/blog" }
+  { text: "Blog", href: "/blog" },
 ];
 ---
 
 <nav class="nav">
   <div class="nav__container">
-    <div class="nav__content">
-      <a href="/" class="nav__logo">StarsDogs</a>
-      <div class="nav__links">
-        {links.map(link => (
-          <a href={link.href} class="nav__link">{link.text}</a>
-        ))}
-      </div>
+    <a href="/" class="nav__logo">
+      <span class="nav__logo-text">StarsDogs</span>
+    </a>
+
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
+    </button>
+
+    <div class="nav__menu">
+      {
+        links.map((link) => (
+          <a href={link.href} class="nav__link">
+            {link.text}
+          </a>
+        ))
+      }
+      <a href="https://wa.me/573218021869" class="nav__cta">Contactar</a>
     </div>
   </div>
 </nav>
+
+<script>
+  const toggle = document.querySelector(".nav__toggle");
+  const menu = document.querySelector(".nav__menu");
+  const nav = document.querySelector(".nav");
+
+  // Toggle menu
+  toggle?.addEventListener("click", () => {
+    menu?.classList.toggle("nav__menu--active");
+    toggle.setAttribute(
+      "aria-expanded",
+      toggle.getAttribute("aria-expanded") === "false" ? "true" : "false"
+    );
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!nav?.contains(e.target as Node)) {
+      menu?.classList.remove("nav__menu--active");
+      toggle?.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  // Handle scroll
+  let lastScroll = 0;
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.scrollY;
+    if (currentScroll > lastScroll && currentScroll > 100) {
+      nav?.classList.add("nav--hidden");
+    } else {
+      nav?.classList.remove("nav--hidden");
+    }
+    if (currentScroll > 50) {
+      nav?.classList.add("nav--scrolled");
+    } else {
+      nav?.classList.remove("nav--scrolled");
+    }
+    lastScroll = currentScroll;
+  });
+</script>
