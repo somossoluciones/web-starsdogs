@@ -1,6 +1,6 @@
-# Centro Espiritual - Landing Page
+# Stars Dogs - Sitio Web de Crianza de Teckels
 
-Landing page profesional para un centro espiritual especializado en amarres de amor, retorno de pareja y limpiezas energéticas.
+Sitio web profesional dedicado a la crianza responsable de perros Teckel (Dachshund), ofreciendo información detallada sobre la raza, cuidados y cachorros disponibles.
 
 ## 🚀 Características
 
@@ -8,11 +8,11 @@ Landing page profesional para un centro espiritual especializado en amarres de a
 - 📱 Diseño totalmente responsive
 - 🎨 Metodología BEM para CSS escalable y mantenible
 - 🔍 Optimizado para SEO
-- 📝 Blog integrado con artículos sobre temas espirituales
+- 📝 Blog educativo sobre cuidados del Teckel
 - 💬 Botón flotante de WhatsApp para contacto directo
-- 🌙 Modo oscuro con diseño elegante
-- 🔄 Carrusel de testimonios
-- 📊 Schema.org para mejor indexación
+- 🖼️ Galería de cachorros
+- 🌈 Guía de colores de Teckel
+- 🔄 Carrusel de testimonios de clientes felices
 
 ## 🛠️ Stack Tecnológico
 
@@ -28,12 +28,14 @@ Landing page profesional para un centro espiritual especializado en amarres de a
 ├── public/
 │   └── images/
 │       ├── hero-bg.jpg
-│       └── services/
+│       ├── blog/
+│       ├── cachorros/
+│       └── testimonials/
 ├── src/
 │   ├── components/
 │   │   ├── BlogCard.astro
 │   │   ├── Navigation.astro
-│   │   ├── ServiceCard.astro
+│   │   ├── TeckelColors.astro
 │   │   ├── TestimonialsCarousel.astro
 │   │   └── WhatsAppButton.astro
 │   ├── layouts/
@@ -41,6 +43,7 @@ Landing page profesional para un centro espiritual especializado en amarres de a
 │   │   └── Layout.astro
 │   ├── pages/
 │   │   ├── index.astro
+│   │   ├── clientes-felices.astro
 │   │   └── blog/
 │   ├── styles/
 │   │   ├── components/
@@ -48,7 +51,8 @@ Landing page profesional para un centro espiritual especializado en amarres de a
 │   │   ├── _variables.scss
 │   │   └── main.scss
 │   └── utils/
-│       └── blog.ts
+│       ├── blog.ts
+│       └── services.ts
 └── package.json
 ```
 
@@ -101,12 +105,19 @@ npm run preview
 - Imágenes adaptativas
 - Navegación móvil optimizada
 
+## 📚 Contenido del Blog
+
+- Cuidados del cachorro Teckel
+- Entrenamiento del Teckel
+- Salud del Teckel
+- Guía de colores y variedades
+
 ## 🤝 Contribuir
 
 1. Fork el proyecto
-2. Crea tu Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push al Branch (`git push origin feature/AmazingFeature`)
+2. Crea tu Feature Branch (`git checkout -b feature/NuevaCaracteristica`)
+3. Commit tus cambios (`git commit -m 'Agrega nueva característica'`)
+4. Push al Branch (`git push origin feature/NuevaCaracteristica`)
 5. Abre un Pull Request
 
 ## 📄 Licencia
@@ -115,4 +126,4 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 
 ## ✨ Créditos
 
-Desarrollado con ❤️ por [Tu Nombre/Empresa]
+Desarrollado con ❤️ por Stars Dogs
