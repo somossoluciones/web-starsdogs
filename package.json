@@ -15,7 +15,7 @@
     "astro": "^5.0.5",
     "sass": "^1.72.0",
     "schema-dts": "^1.1.2",
-    "swiper": "^11.0.7"
+    "swiper": "^11.1.15"
   },
   "devDependencies": {
     "wrangler": "^3.99.0"

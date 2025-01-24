@@ -2,8 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import ServiceCard from "../components/ServiceCard.astro";
 import TestimonialsCarousel from "../components/TestimonialsCarousel.astro";
-import TeckelColors from "../components/TeckelColors.astro"; // Importar el nuevo componente
-import Contact from "../components/Contact.astro";
+import TeckelColors from "../components/TeckelColors.astro";
+import Hero from "../components/Hero.astro";
 import { getServices } from "../utils/services";
 
 const services = getServices();
@@ -33,21 +33,7 @@ const schema = {
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 
   <main>
-    <section class="hero">
-      <div class="hero__container">
-        <h1 class="hero__title">Tu Próximo Compañero Teckel te Espera</h1>
-        <p class="hero__subtitle">
-          Cachorros Dachshund de la más alta calidad, criados con amor en
-          Medellín para el mundo.
-        </p>
-        <div class="hero__cta">
-          <a href="https://wa.me/573218021869" class="btn btn--primary"
-            >¡Contáctanos!</a
-          >
-          <p class="hero__guarantee">🐶 Amor incondicional garantizado</p>
-        </div>
-      </div>
-    </section>
+    <Hero />
 
     <section class="services" id="servicios">
       <h2 class="services__title">Nuestros Cachorros Teckel</h2>
@@ -80,10 +66,7 @@ const schema = {
     </section>
 
     <TeckelColors />
-    <!-- Agregar el nuevo componente aquí -->
 
     <TestimonialsCarousel />
-
-    <Contact />
   </main>
 </Layout>
